@@ -21,9 +21,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="NeuralNetwork.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ViedoCapture.py" />
   </ItemGroup>
   <ItemGroup>
