@@ -22,10 +22,10 @@ while(True):
         cv2.rectangle(frame,(x,y),(x + w,y + h),(255,0,0),2)
 
     # Display the resulting frame
-    cv2.imshow('frame', frame)
+    cv2.imshow('Camera', frame)
     
     if cv2.waitKey(1) & 0xff == ord('k'):
-        cv2.imshow('frame1qqq', frame)
+        cv2.imshow('PrtScr', frame)
     if cv2.waitKey(1) & 0xff == ord('q'):
         break
 
