@@ -2,7 +2,6 @@
 Team Project
 
 Mandatory tools
-
 - numpy
 - opencv-python
 - ctypes
