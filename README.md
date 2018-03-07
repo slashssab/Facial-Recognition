@@ -3,9 +3,9 @@ Team Project
 
 Mandatory tools
 
--numpy
--opencv-python
--ctypes
+*numpy
+*opencv-python
+*ctypes
 
 >Capturing image form your camera
 
