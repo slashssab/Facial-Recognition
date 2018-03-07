@@ -1,7 +1,7 @@
 
 import numpy as np
 from CameraManagement.CameraManagerTools import *
-from CameraManagement.FrameConfigTools import DisplayFrame
+from CameraManagement.FrameConfigTools import *
 
 import cv2
 
@@ -20,6 +20,7 @@ while(True):
     faces = DetectFace(frame, face_cascade)
 
     DisplayFrame(faces, frame)
+    
     # Display the resulting frame
  
     if cv2.waitKey(1) & 0xff == ord('k'):
