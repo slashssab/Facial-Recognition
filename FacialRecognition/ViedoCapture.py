@@ -4,12 +4,18 @@ import ctypes
 import cv2
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+file = "./images/test_image.jpg"
 
 cap = cv2.VideoCapture(0)
 #ret, frame = cap.read()
 user32 = ctypes.windll.user32
 ret = cap.set(3, user32.GetSystemMetrics(0))
 ret = cap.set(4, user32.GetSystemMetrics(1))
+
+def get_image():
+ # read is the easiest way to get a full image out of a VideoCapture object.
+ retval, im = cap.read()
+ return im
 
 while(True):
     # Capture frame-by-frame
@@ -26,6 +32,8 @@ while(True):
     
     if cv2.waitKey(1) & 0xff == ord('k'):
         cv2.imshow('PrtScr', frame)
+        camera_capture = get_image()
+        cv2.imwrite(file, camera_capture)
     if cv2.waitKey(1) & 0xff == ord('q'):
         break
 
