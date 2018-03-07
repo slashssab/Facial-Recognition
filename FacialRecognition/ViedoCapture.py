@@ -1,38 +1,30 @@
 
 import numpy as np
-import ctypes
+from CameraManagement.CameraManagerTools import *
+from CameraManagement.FrameConfigTools import DisplayFrame
+
 import cv2
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 file = "./images/test_image.jpg"
 
-cap = cv2.VideoCapture(0)
-#ret, frame = cap.read()
-user32 = ctypes.windll.user32
-ret = cap.set(3, user32.GetSystemMetrics(0))
-ret = cap.set(4, user32.GetSystemMetrics(1))
 
-def get_image():
- # read is the easiest way to get a full image out of a VideoCapture object.
- retval, im = cap.read()
- return im
+cap = cv2.VideoCapture(0)
+ret, frame = cap.read()
+CameraInitSize(ret, cap)
 
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
     # Our operations on the frame come here
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+    faces = DetectFace(frame, face_cascade)
 
-    for (x,y,w,h) in faces:
-        cv2.rectangle(frame,(x,y),(x + w,y + h),(255,0,0),2)
-
+    DisplayFrame(faces, frame)
     # Display the resulting frame
-    cv2.imshow('Camera', frame)
-    
+ 
     if cv2.waitKey(1) & 0xff == ord('k'):
         cv2.imshow('PrtScr', frame)
-        camera_capture = get_image()
+        camera_capture = get_image(cap)
         cv2.imwrite(file, camera_capture)
     if cv2.waitKey(1) & 0xff == ord('q'):
         break
