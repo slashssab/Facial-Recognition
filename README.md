@@ -6,6 +6,6 @@ Mandatory tools
 - opencv-python
 - ctypes
 
->Capturing image form your camera
+>Capturing an image form your camera
 
->Save images of your face, and force the program to learn It
+>Save the images of your face, and force the program to learn It
