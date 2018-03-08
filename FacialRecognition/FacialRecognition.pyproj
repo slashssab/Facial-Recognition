@@ -28,6 +28,9 @@
     <Compile Include="CameraManagement\FrameConfigTools.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CameraManagement\KeyboardManager.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ViedoCapture.py" />
   </ItemGroup>
   <ItemGroup>
