@@ -1,4 +1,4 @@
-from CameraManagement.camera_manager_tools import *
+from CameraManagement.camera_manager import *
 from CameraManagement.frame_config import *
 from Teaching.teacher_help import setup_face_database
 
@@ -12,7 +12,7 @@ imagOrd = 1
 cap = cv2.VideoCapture(0)
 ret, frame = cap.read()
 #Set a size of the capuring images 
-camera_initSize(ret, cap)
+camera_init_size(ret, cap)
 
 while(True):
     # Capture frame-by-frame
