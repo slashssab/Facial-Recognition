@@ -22,13 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CameraManagement\CameraManagerTools.py">
+    <Compile Include="CameraManagement\camera_manager_tools.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CameraManagement\FrameConfigTools.py">
+    <Compile Include="CameraManagement\frame_config.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CameraManagement\KeyboardManager.py">
+    <Compile Include="Teaching\teacher_help.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViedoCapture.py" />
@@ -39,6 +39,7 @@
   <ItemGroup>
     <Folder Include="images\" />
     <Folder Include="CameraManagement\" />
+    <Folder Include="Teaching\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.6" />
