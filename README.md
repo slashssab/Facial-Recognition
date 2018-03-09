@@ -4,8 +4,11 @@ Team Project
 Mandatory tools
 - numpy
 - opencv-python
+- opencv-contrib-python
 - ctypes
 - HaarCascades
+
+>How It works?
 
 >Capturing an image form your camera
 
