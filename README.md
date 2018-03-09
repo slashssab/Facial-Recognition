@@ -1,6 +1,10 @@
 # Facial-Recognition
 Team Project
 
+This project gives user a few tools associated directly with FaceID. The main problem is to recognize a face from the current image and classify It. There are some criteria of classification
+- Emotions
+- Gender
+- Glasses
 Mandatory tools
 - numpy
 - opencv-python
