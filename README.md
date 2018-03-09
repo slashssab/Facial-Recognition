@@ -27,8 +27,22 @@ Mandatory tools:
 There are few lines of code with our own function prepeared for this project. Let's take a look at the code and check how the program works  
 
 ```python
+from CameraManagement.camera_manager import *
+from CameraManagement.frame_config import *
+from Teaching.teacher_help import setup_face_database
+
 import cv2
+
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+file = "./images/test_image"
+imagOrd = 1
+
+#Setup the camera configuration
 cap = cv2.VideoCapture(0)
+ret, frame = cap.read()
+#Set a size of the capuring images 
+camera_init_size(ret, cap)
+
 while(True):
     # Capture frame-by-frame
     ret, frame = cap.read()
@@ -50,7 +64,9 @@ while(True):
 # When everything done, release the capture
 cap.release()
 cv2.destroyAllWindows()
+
 ```
+
 
 >Save the images of your face, and force the program to learn It
 
