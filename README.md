@@ -12,4 +12,4 @@ Mandatory tools
 
 Based on
 
-[Contribution guidelines for this project](https://github.com/informramiz/opencv-face-recognition-python)
+[opencv-face-recognition-python by informramiz](https://github.com/informramiz/opencv-face-recognition-python)
