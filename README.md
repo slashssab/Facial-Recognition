@@ -1,6 +1,8 @@
 # Facial-Recognition
 Team Project
 
+This project is based on the articles and the repos shown below.
+
 This project gives user a few tools associated directly with FaceID. The main problem is to recognize a face from the current image and classify It. There are some criteria of classification:
 - Emotions
 - Gender
