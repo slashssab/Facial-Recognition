@@ -9,7 +9,10 @@ Mandatory tools
 - HaarCascades
 
 >How It works?
-
+1. Check the face form the captured view and save It.
+2. The Algotithm learns the face from set of the saved images.
+3. The Program indentify the face shown in the current image per declared period (eg. one second).
+4. If the face from the captured image is recognized by the program It shows a special statement, and when It's not recognized It sends an information to the administrator by SMS/FaceBook 
 >Capturing an image form your camera
 
 >Save the images of your face, and force the program to learn It
