@@ -67,6 +67,7 @@ cv2.destroyAllWindows()
 
 ```
 
+In the first three lines we import functions stored in the attached files.
 
 >Save the images of your face, and force the program to learn It
 
