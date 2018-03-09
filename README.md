@@ -5,8 +5,8 @@ This project gives user a few tools associated directly with FaceID. The main pr
 - Emotions
 - Gender
 - Glasses
-One of the most interesting problem associated with this program is Machine-Learning. This area of science is used in the program to learn the face form the set of an images. 
-In a specified cases the program sends information by the SMS or FB, or display an appropriate statement. 
+
+One of the most interesting problem associated with this program is Machine-Learning. This area of science is used in the program to learn the face form the set of an images. When the program knows the face, and can classify It, we should do something with this fact. We can store data about emotions of the person in a database, we can check if the person wear glases or guess Its gender.In a specified cases the program sends information by the SMS or FB, or display an appropriate statement. 
 
 Mandatory tools
 - numpy
