@@ -24,6 +24,34 @@ Mandatory tools:
 4. If the face from the captured image is recognized by the program It shows a special statement, and when It's not recognized It sends an information to the administrator by SMS/FaceBook 
 >Capturing an image form your camera
 
+There are few lines of code with our own function prepeared for this project. Let's take a look at the code and check how the program works  
+
+```python
+import cv2
+cap = cv2.VideoCapture(0)
+while(True):
+    # Capture frame-by-frame
+    ret, frame = cap.read()
+
+    # Our operations on the frame come here
+    faces = detect_face(frame, face_cascade)
+
+    # Display the resulting frame
+    display_frame(faces, frame, "tekst z bazy"+str(imagOrd))
+    
+    # Take a photo of your face, and save in the images folder
+    if cv2.waitKey(1) & 0xff == ord('k'):
+        setup_face_database(frame, cap, file, imagOrd)
+        imagOrd = imagOrd + 1
+    if cv2.waitKey(1) & 0xff == ord('q'):
+        cv2.destroyWindow('PrtScr')
+        break
+
+# When everything done, release the capture
+cap.release()
+cv2.destroyAllWindows()
+```
+
 >Save the images of your face, and force the program to learn It
 
 Based on
