@@ -99,5 +99,4 @@ ENV/
 
 # mypy
 .mypy_cache/
-/.vs/PythonApplication3/v15/.suo
 /.vs

@@ -22,10 +22,24 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CameraManagement\camera_manager.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CameraManagement\frame_config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Teaching\teacher_help.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ViedoCapture.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="haarcascade_frontalface_default.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="CameraManagement\" />
+    <Folder Include="Teaching\" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.6" />
