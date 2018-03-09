@@ -1,10 +1,12 @@
 # Facial-Recognition
 Team Project
 
-This project gives user a few tools associated directly with FaceID. The main problem is to recognize a face from the current image and classify It. There are some criteria of classification
+This project gives user a few tools associated directly with FaceID. The main problem is to recognize a face from the current image and classify It. There are some criteria of classification:
 - Emotions
 - Gender
 - Glasses
+One of the most interesting problem associated with this program is Machine-Learning. This area of science is used in the program to learn the face form the set of an images. 
+In a specified cases the program sends information by the SMS or FB, or display an appropriate statement. 
 
 Mandatory tools
 - numpy
