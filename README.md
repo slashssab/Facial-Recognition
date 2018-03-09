@@ -10,4 +10,6 @@ Mandatory tools
 
 >Save the images of your face, and force the program to learn It
 
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+Based on
+
+[Contribution guidelines for this project](https://github.com/informramiz/opencv-face-recognition-python)
