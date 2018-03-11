@@ -99,5 +99,5 @@ ENV/
 
 # mypy
 .mypy_cache/
-/.vs/VSWorkspaceState.json
-/.vs/FacialRecognition/v15/.suo
+/.vs/PythonApplication3/v15/.suo
+/.vs
