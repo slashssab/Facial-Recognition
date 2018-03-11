@@ -38,6 +38,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="haarcascade_frontalface_default.xml" />
+    <Content Include="SocialAPI\Tiger.jpg" />
+    <Content Include="Tiger.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="images\" />
