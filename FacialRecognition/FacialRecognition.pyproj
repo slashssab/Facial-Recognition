@@ -4,13 +4,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>82dc3a01-1d4c-4c70-a913-04e723f8bde9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ViedoCapture.py</StartupFile>
+    <StartupFile>SocialAPI\facebook_config.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>PythonApplication3</Name>
     <RootNamespace>PythonApplication3</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,13 +22,31 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="NeuralNetwork.py">
+    <Compile Include="CameraManagement\camera_manager.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CameraManagement\frame_config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SocialAPI\facebook_config.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Teaching\teacher_help.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViedoCapture.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="haarcascade_frontalface_default.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+    <Folder Include="CameraManagement\" />
+    <Folder Include="SocialAPI\" />
+    <Folder Include="Teaching\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
