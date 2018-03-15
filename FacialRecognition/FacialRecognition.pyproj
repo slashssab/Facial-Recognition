@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>82dc3a01-1d4c-4c70-a913-04e723f8bde9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SocialAPI\facebook_config.py</StartupFile>
+    <StartupFile>ViedoCapture.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
