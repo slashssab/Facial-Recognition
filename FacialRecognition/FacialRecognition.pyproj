@@ -4,7 +4,8 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>82dc3a01-1d4c-4c70-a913-04e723f8bde9</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>ViedoCapture.py</StartupFile>
+    <StartupFile>
+    </StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,13 +22,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="NeuralNetwork.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="ViedoCapture.py" />
+    <Compile Include="FaceRecognizedSql\dataCreator.py" />
+    <Compile Include="FaceRecognizedSql\detector.py" />
+    <Compile Include="FaceRecognizedSql\Trainner.py" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="haarcascade_frontalface_default.xml" />
+    <Content Include="FaceRecognizedSql\Face.db" />
+    <Content Include="FaceRecognizedSql\haarcascade_frontalface_default.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FaceRecognizedSql\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
