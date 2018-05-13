@@ -35,6 +35,7 @@ def loadUserInformationFromDataBase(ID):
     return profile
 
 detectFace = cv2.CascadeClassifier( 'haarcascade_frontalface_default.xml' )
+detectGlasses = cv2.CascadeClassifier('haarcascade_glasses.xml')
 
 cameraVideo = cv2.VideoCapture( 0 )
 
@@ -47,7 +48,7 @@ faceRecognize.read( "recognizer\\trainningData.yml" )
 font = cv2.FONT_HERSHEY_SIMPLEX
 
 # this loop will be last until you pressed letter 'e'
-
+color = (0, 255, 0)
 while( True ):
     
     retval, Picture = cameraVideo.read()
@@ -57,24 +58,38 @@ while( True ):
     grayColor = cv2.cvtColor( Picture, cv2.COLOR_BGR2GRAY )
     
     faces = detectFace.detectMultiScale( grayColor, 1.3, 5 )
-    
+
     for ( x, y, w, h ) in faces:
 
+        roi_gray = grayColor[y:y+h, x:x+w]
+        roi_color = Picture[y:y+h, x:x+w]
         # drow red rectangle
 
-        cv2.rectangle( Picture, ( x, y ), ( x + w, y + h ), ( 255, 0, 0 ), 2 )
-        
+        cv2.rectangle( Picture, ( x, y ), ( x + w, y + h ), color , 2 )
+        glasses = detectGlasses.detectMultiScale(roi_gray)
+
+        for (ex,ey,ew,eh) in glasses:
+            cv2.putText( Picture,'Glasses: Ok!', ( x, y + h + 150), font, 0.55, ( 0, 255, 0 ), 1 )        
+
         id, conf = faceRecognize.predict( grayColor[ y: y + h, x: x + w ] )
         
         profile = loadUserInformationFromDataBase( id )
 
+        if (conf>50):
+            color = (0, 0, 255)
+        else :
+            color = (0, 255, 0)
+
         if( profile != None ) : 
 
-            cv2.putText( Picture, str( profile[ 1 ] ), ( x, y + h + 30), font, 0.55, ( 0, 255, 0 ), 1 )
+                cv2.putText( Picture, str( profile[ 1 ] ), ( x, y + h + 30), font, 0.55, ( 0, 255, 0 ), 1 )
 
-            cv2.putText( Picture, str( profile[ 2 ] ), ( x, y + h + 60), font, 0.55, ( 0, 255, 0 ), 1 )
+                cv2.putText( Picture, str( profile[ 2 ] ), ( x, y + h + 60), font, 0.55, ( 0, 255, 0 ), 1 )
 
-            cv2.putText( Picture, str( profile[ 3 ] ), ( x, y + h + 90), font, 0.55, ( 0, 255, 0 ), 1 )
+                cv2.putText( Picture, str( profile[ 3 ] ), ( x, y + h + 90), font, 0.55, ( 0, 255, 0 ), 1 )
+
+                cv2.putText( Picture, str( conf ), ( x, y + h + 120), font, 0.55, ( 0, 255, 0 ), 1 )
+        
 
     cv2.imshow( 'Frame', Picture )
     

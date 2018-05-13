@@ -4,7 +4,7 @@ from PIL import Image
 
 recognizer = cv2.face.LBPHFaceRecognizer_create() 
 
-pathToFolderWithPicturesUsers = 'dataSet'
+pathToFolderWithPicturesUsers = '/dataSet'
 
 def getImagesWithID(path):
 
