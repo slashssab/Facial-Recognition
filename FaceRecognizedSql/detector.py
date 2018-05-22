@@ -3,7 +3,7 @@ import cv2, os
 import pickle
 import sqlite3
 from PIL import Image
-
+from socialMedia import socialPost
 # the function loadUserInformationFromDataBase return all information from database about user
 
 def loadUserInformationFromDataBase(ID):
@@ -40,7 +40,7 @@ detectGlasses = cv2.CascadeClassifier('haarcascade_glasses.xml')
 cameraVideo = cv2.VideoCapture( 0 )
 
 faceRecognize = cv2.face.LBPHFaceRecognizer_create(); 
-
+verify = "";
 faceRecognize.read( "recognizer\\trainningData.yml" )
 
 # we chose a font to display information
@@ -68,35 +68,44 @@ while( True ):
         cv2.rectangle( Picture, ( x, y ), ( x + w, y + h ), color , 2 )
         glasses = detectGlasses.detectMultiScale(roi_gray)
 
-        for (ex,ey,ew,eh) in glasses:
-            cv2.putText( Picture,'Glasses: Ok!', ( x, y + h + 150), font, 0.55, ( 0, 255, 0 ), 1 )        
+        #for (ex,ey,ew,eh) in glasses:
+        #    cv2.putText( Picture,'Glasses: Ok!', ( x, y + h + 150), font, 0.55, ( 0, 255, 0 ), 1 )        
 
         id, conf = faceRecognize.predict( grayColor[ y: y + h, x: x + w ] )
         
         profile = loadUserInformationFromDataBase( id )
 
-        if (conf>50):
+        if (conf>60):
             color = (0, 0, 255)
         else :
             color = (0, 255, 0)
 
         if( profile != None ) : 
-
+                if cv2.waitKey( 1 ) & 0xFF == ord( 'v' ):  
+                        if (conf>60) :
+                            verify = "Wasted "                            
+                            cv2.imwrite("Intruder.jpg", grayColor[ y: y + h, x: x + w ] )
+                            socialPost(open("Intruder.jpg", "rb"))
+   
+                        else:
+                            verify = "Passed "
+                            
                 cv2.putText( Picture, str( profile[ 1 ] ), ( x, y + h + 30), font, 0.55, ( 0, 255, 0 ), 1 )
 
                 cv2.putText( Picture, str( profile[ 2 ] ), ( x, y + h + 60), font, 0.55, ( 0, 255, 0 ), 1 )
 
                 cv2.putText( Picture, str( profile[ 3 ] ), ( x, y + h + 90), font, 0.55, ( 0, 255, 0 ), 1 )
 
-                cv2.putText( Picture, str( conf ), ( x, y + h + 120), font, 0.55, ( 0, 255, 0 ), 1 )
-        
+                cv2.putText( Picture, verify, ( x, y + h + 120), font, 0.55, ( 0, 255, 0 ), 1 )
+
 
     cv2.imshow( 'Frame', Picture )
-    
-    if cv2.waitKey( 1 ) & 0xFF == ord( 'e' ):
-    
+
+    if cv2.waitKey( 1 ) & 0xFF == ord( 'e' ): 
         break
-    
+   
+
+        
 cap.release()
 
 cv2.destroyAllWindows()

@@ -6,7 +6,7 @@ cameraVideo = cv2.VideoCapture(0)
 detectFace = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 
-sampleNumber = 5
+sampleNumber = 20
 
 while(True):
 
@@ -30,7 +30,7 @@ while(True):
    
         # saving the captured face in the dataset folder
    
-        cv2.imwrite("dataSet/User.5" + '.' + str( sampleNumber ) + ".jpg", grayColor[ y: y + h, x: x + w ] )
+        cv2.imwrite("dataSet/User.10" + '.' + str( sampleNumber ) + ".jpg", grayColor[ y: y + h, x: x + w ] )
    
 
     # show the video in Frame
@@ -45,7 +45,7 @@ while(True):
    
     # break if the sample number is morethan 18
    
-    elif sampleNumber > 18 :
+    elif sampleNumber > 30 :
    
         break
 
