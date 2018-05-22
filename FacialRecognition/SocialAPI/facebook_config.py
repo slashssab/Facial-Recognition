@@ -54,6 +54,6 @@ facebook_graph = facebook.GraphAPI(oauth_access_token)
 
 # Try to post something on the wall.
 #try:
-fb_response = facebook_graph.put_wall_post('test posta m8.1', \
+fb_response = facebook_graph.put_wall_post('test posta przed prezentacja', \
                                                profile_id = FACEBOOK_PROFILE_ID)
 #4
